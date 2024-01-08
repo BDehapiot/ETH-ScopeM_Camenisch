@@ -1,0 +1,26 @@
+name: Camenisch
+
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+
+dependencies:
+  - python=3.10
+  - numpy=1.24*
+  - numba
+  - scipy
+  - pandas
+  - scikit-image
+  - scikit-learn
+  - opencv
+  - joblib
+  - matplotlib-base
+  - spyder
+  - pytorch=1.12.0
+  - cudatoolkit=11.3
+  - pip
+  - pip:
+    - napari[all]
+    - cellpose[gui]
+    - albumentations
