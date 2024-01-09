@@ -28,11 +28,11 @@ print("  Predict :", end='')
 t0 = time.time()
 
 model = models.Cellpose(model_type="cyto", gpu=True)
-# model = models.CellposeModel(model_type='tissuenet', gpu=True)
+# model = models.CellposeModel(model_type='LC2', gpu=True)
 
 masks, flows, styles, diams = model.eval(
     img, 
-    batch_size=4,
+    batch_size=16,
     diameter=10, 
     channels=[0,0],
     flow_threshold=0.8, 
