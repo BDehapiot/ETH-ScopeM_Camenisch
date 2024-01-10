@@ -20,7 +20,8 @@ stack = io.imread(Path(data_path, "stack_lite.tif"))
 
 #%% 
 
-img = stack[70:130,...]
+# img = stack[70:130,...]
+img = stack
 
 #%% 
 
@@ -56,4 +57,16 @@ viewer.add_image(img, scale=scale)
 viewer.add_labels(masks, scale=scale)
 viewer.add_image(flows[2], scale=scale)
 
-# viewer.add_image(stack, scale=scale)
+#%%
+
+print(np.max(masks))
+
+io.imsave(
+    Path(data_path, "masks.tif"),
+    masks.astype("uint16"), check_contrast=False,
+    )    
+
+io.imsave(
+    Path(data_path, "probs.tif"),
+    flows[2].astype("float32"), check_contrast=False,
+    )   
